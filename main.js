@@ -89,29 +89,46 @@ function makeSideItemActive(item, direction) {
   item.classList.replace(direction, "active");
 }
 
+let isItemSliding = false;
 leftArr.onclick = async () => {
-  let addedItem = addSideItemAtDirection("left");
-  moveActiveItemToDirection("right");
-  // give time for the browser to register the property change
-  // for the animation to work.
-  await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, 50);
-  });
-  makeSideItemActive(addedItem, "left");
+  if (!isItemSliding) {
+    preventClick();
+    let addedItem = addSideItemAtDirection("left");
+    moveActiveItemToDirection("right");
+    // give time for the browser to register the property change
+    // for the animation to work.
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 50);
+    });
+    makeSideItemActive(addedItem, "left");
+  }
 };
 rightArr.onclick = async () => {
-  let addedItem = addSideItemAtDirection("right");
-  moveActiveItemToDirection("left");
-  // give time for the browser to register the property change
-  // for the animation to work.
+  if (!isItemSliding) {
+    preventClick();
+    let addedItem = addSideItemAtDirection("right");
+    moveActiveItemToDirection("left");
+    // give time for the browser to register the property change
+    // for the animation to work.
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 50);
+    });
+
+    makeSideItemActive(addedItem, "right");
+  }
+};
+
+async function preventClick() {
+  isItemSliding = true;
   await new Promise((resolve) => {
     setTimeout(() => {
       resolve();
-    }, 50);
+    }, 500);
   });
-  makeSideItemActive(addedItem, "right");
-};
-
+  isItemSliding = false;
+}
 //Slideshow code end//
