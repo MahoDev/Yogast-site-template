@@ -19,10 +19,10 @@ const rightArr = document.querySelector(".right-arr");
 const item1 = document.querySelector(".slideshow .item");
 const item2 = item1.cloneNode(true);
 const item3 = item1.cloneNode(true);
-item2.querySelector("img").src = "imgs/football.png";
+item2.querySelector("img").src = "imgs/hero section/football.png";
 item2.querySelector("img").alt = "football";
 item2.querySelector("img").title = "Photo by bella lac on Unsplash";
-item3.querySelector("img").src = "imgs/volleyball.png";
+item3.querySelector("img").src = "imgs/hero section/volleyball.png";
 item3.querySelector("img").alt = "volleyball";
 item3.querySelector("img").title = "";
 
