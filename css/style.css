@@ -201,6 +201,7 @@ body {
   transition: background-color 1s;
   cursor: pointer;
   position: absolute;
+  user-select: none;
 }
 .hero-section .slideshow .left-arr {
   left: 40px;
@@ -224,6 +225,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: left, right, transform 0.5s ease-out;
 }
 .hero-section .slideshow .item .image {
   width: 360px;
@@ -258,4 +260,10 @@ body {
 .hero-section .slideshow .item .more-btn:hover {
   background-color: var(--secondary-color);
 }
-/* hero section end */
+
+.hero-section .slideshow .item.left {
+  transform: translateX(-350%);
+}
+.hero-section .slideshow .item.right {
+  transform: translateX(250%);
+}
