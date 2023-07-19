@@ -100,6 +100,26 @@ body {
   background-color: var(--secondary-color);
 }
 
+.social-media {
+  margin-top: 25px;
+}
+.social-media i {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-right: 15px;
+  transition: transform, color, 0.3s;
+  cursor: pointer;
+  color: var(--secondary-color);
+}
+.social-media i:last-child {
+  margin-right: 0;
+}
+
+.social-media i:hover {
+  color: var(--main-color);
+  transform: translateY(-5px);
+}
+
 /* reusable styles end*/
 
 /* header start */
@@ -488,25 +508,6 @@ body {
   color: var(--main-color);
   font-weight: 700;
 }
-.trainer-section .slideshow .items .item .social-media {
-  margin-top: 25px;
-}
-.trainer-section .slideshow .items .item .social-media i {
-  display: inline-block;
-  font-size: 1.5rem;
-  margin-right: 15px;
-  transition: transform, color, 0.3s;
-  cursor: pointer;
-  color: var(--secondary-color);
-}
-.trainer-section .slideshow .items .item .social-media i:last-child {
-  margin-right: 0;
-}
-
-.trainer-section .slideshow .items .item .social-media i:hover {
-  color: var(--main-color);
-  transform: translateY(-5px);
-}
 
 .trainer-section .slideshow .items .item.left {
   transform: translateX(-300%);
@@ -536,3 +537,70 @@ body {
   flex-basis: 30%;
 }
 /* contact section end */
+/* footer start */
+.footer {
+  background-color: black;
+  width: 100%;
+  padding: 70px 0 10px 0;
+  border-start-start-radius: 400px;
+  border-start-end-radius: 400px;
+}
+
+.footer .footer-content {
+  width: 900px;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+}
+
+.footer .footer-content .social-media {
+  margin-bottom: 30px;
+}
+.footer .footer-content .social-media i {
+  color: white;
+}
+.footer .footer-content .social-media i:hover {
+  color: var(--main-color);
+}
+.footer .footer-content .contact-methods {
+  margin-bottom: 20px;
+}
+.footer .footer-content .contact-methods .method {
+  display: inline-block;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.footer .footer-content .contact-methods .method i {
+  font-size: 1.1rem;
+  padding-right: 10px;
+}
+.footer .footer-content .contact-methods .method div {
+  display: inline-block;
+}
+
+.footer .footer-content .links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.footer .footer-content .links::after {
+  content: "";
+  width: 700px;
+  height: 1px;
+  background-color: rgb(33 33 33 / 80%);
+  position: absolute;
+  bottom: -20px;
+}
+.footer .footer-content .links a {
+  color: white;
+}
+.footer .footer-content .links a:hover {
+  color: var(--main-color);
+}
+
+.footer .footer-content .copyright {
+  font-size: 0.7rem;
+}
+/* footer end */
