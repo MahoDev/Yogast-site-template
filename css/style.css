@@ -242,34 +242,6 @@ body {
   display: flex;
   justify-content: center;
 }
-/* 
-.hero-section .slideshow .left-arr,
-.hero-section .slideshow .right-arr {
-  width: 80px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2.3rem;
-  color: white;
-  background-color: var(--main-color);
-  border-radius: 50%;
-  transition: background-color 0.5s;
-  cursor: pointer;
-  position: absolute;
-  user-select: none;
-}
-.hero-section .slideshow .left-arr {
-  left: 40px;
-}
-.hero-section .slideshow .right-arr {
-  right: 40px;
-}
-
-.hero-section .slideshow .left-arr:hover,
-.hero-section .slideshow .right-arr:hover {
-  background-color: var(--secondary-color);
-} */
 
 .hero-section .slideshow .item {
   position: absolute;
@@ -456,6 +428,76 @@ body {
 /* trainer section start */
 .trainer-section .info {
   margin: 70px 0;
+  text-align: center;
+}
+.trainer-section .slideshow {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.trainer-section .slideshow .item {
+  /* position: absolute; */
+  /* top: -322px; */
+  transform: translateX(-0.001%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  transition: transform 1s ease;
 }
 
+.trainer-section .slideshow .item .image {
+  width: 540px;
+  height: 540px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 4px black;
+}
+
+.trainer-section .slideshow .item .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.trainer-section .slideshow .left-arr,
+.trainer-section .slideshow .right-arr {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.trainer-section .slideshow .item .personal-info {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.trainer-section .slideshow .item .personal-info .name {
+  color: var(--secondary-color);
+  font-size: 1.4rem;
+}
+.trainer-section .slideshow .item .personal-info .role {
+  font-size: 1rem;
+  color: var(--main-color);
+  font-weight: 700;
+}
+.trainer-section .slideshow .item .social-media {
+  margin-top: 25px;
+}
+.trainer-section .slideshow .item .social-media i {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-right: 15px;
+  transition: transform, color, 0.3s;
+  cursor: pointer;
+  color: var(--secondary-color);
+}
+.trainer-section .slideshow .item .social-media i:last-child {
+  margin-right: 0;
+}
+
+.trainer-section .slideshow .item .social-media i:hover {
+  color: var(--main-color);
+  transform: translateY(-5px);
+}
 /* trainer section end */
