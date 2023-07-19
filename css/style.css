@@ -415,4 +415,11 @@ body {
   position: relative;
 }
 
+.about-section .thumbnail .hide {
+  display: none;
+}
+.about-section .thumbnail:hover .hide {
+  display: flex;
+  opacity: 40%;
+}
 /* about section end */

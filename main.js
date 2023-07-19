@@ -132,3 +132,27 @@ async function preventClick() {
   isItemSliding = false;
 }
 //Slideshow code end//
+
+// about section start//
+let thumbnailContainer = document.querySelector(".about-section .thumbnail");
+let overlay = thumbnailContainer.children[0];
+let img = thumbnailContainer.children[1];
+let playBtn = thumbnailContainer.children[2];
+
+let isPlaying = false;
+playBtn.onclick = () => {
+  if (isPlaying === false) {
+    playBtn.classList.add("hide");
+    overlay.classList.add("hide");
+    img.src =
+      "https://media.tenor.com/hbx5w449JhYAAAAC/nfl-american-football.gif";
+    isPlaying = true;
+  } else {
+    playBtn.classList.remove("hide");
+    overlay.classList.remove("hide");
+    img.src = "imgs/about section/team.jpg";
+    isPlaying = false;
+  }
+};
+
+// about section end//
