@@ -71,6 +71,35 @@ body {
 .more-btn:hover {
   background-color: var(--secondary-color);
 }
+
+.left-arr,
+.right-arr {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  transition: background-color 0.5s;
+  cursor: pointer;
+  position: absolute;
+  user-select: none;
+}
+.left-arr {
+  left: 40px;
+}
+.right-arr {
+  right: 40px;
+}
+
+.left-arr:hover,
+.right-arr:hover {
+  background-color: var(--secondary-color);
+}
+
 /* reusable styles end*/
 
 /* header start */
@@ -213,7 +242,7 @@ body {
   display: flex;
   justify-content: center;
 }
-
+/* 
 .hero-section .slideshow .left-arr,
 .hero-section .slideshow .right-arr {
   width: 80px;
@@ -240,7 +269,7 @@ body {
 .hero-section .slideshow .left-arr:hover,
 .hero-section .slideshow .right-arr:hover {
   background-color: var(--secondary-color);
-}
+} */
 
 .hero-section .slideshow .item {
   position: absolute;
@@ -423,3 +452,10 @@ body {
   opacity: 40%;
 }
 /* about section end */
+
+/* trainer section start */
+.trainer-section .info {
+  margin: 70px 0;
+}
+
+/* trainer section end */
