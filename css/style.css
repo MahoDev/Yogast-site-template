@@ -692,7 +692,6 @@ body {
 @media (max-width: 767px) {
   .footer {
     border-radius: 0;
-    max-width: 737px;
   }
 }
 /* footer end */
