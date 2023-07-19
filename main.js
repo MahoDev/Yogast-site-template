@@ -37,10 +37,11 @@ function addSideItemAtDirection(directon, allItems, activeItem) {
     newItemToAdd.classList.add("right");
     newItemToAdd.style.visibility = "visible";
   }
-  activeItem.parentElement.insertBefore(
-    newItemToAdd,
-    activeItem.parentElement.lastElementChild //.right-arr element
-  );
+  // activeItem.parentElement.insertBefore(
+  //   newItemToAdd,
+  //   activeItem.parentElement.lastElementChild //.right-arr element
+  // );
+  activeItem.parentElement.appendChild(newItemToAdd);
 
   return newItemToAdd;
 }
@@ -138,13 +139,13 @@ heroItem3.querySelector("img").title = "";
 heroItem1.classList.add("active");
 let heroSectionItems = [heroItem1, heroItem2, heroItem3];
 
-heroLeftArr.onclick = async () => {
+heroLeftArr.onclick = () => {
   leftSlide(
     heroSectionItems,
     document.querySelector(".hero-section .item.active")
   );
 };
-heroRightArr.onclick = async () => {
+heroRightArr.onclick = () => {
   rightSlide(
     heroSectionItems,
     document.querySelector(".hero-section .item.active")
@@ -178,5 +179,29 @@ playBtn.onclick = () => {
 //about section end//
 
 //trainer section start//
+const trainerLeftArr = document.querySelector(".trainer-section .left-arr");
+const trainerRightArr = document.querySelector(".trainer-section .right-arr");
+const trainerItem1 = document.querySelector(".trainer-section .item");
 
+const trainerItem2 = trainerItem1.cloneNode(true);
+trainerItem2.querySelector("img").src = "imgs/trainer section/trainer2.jpg";
+trainerItem2.querySelector("img").alt = "trainer2";
+trainerItem2.querySelector("img").title = "Photo by Albert Dera on Unsplash";
+trainerItem2.querySelector(".name").innerText = "Albert Dara";
+
+trainerItem1.classList.add("active");
+const trainerSectionItems = [trainerItem1, trainerItem2];
+
+trainerLeftArr.onclick = () => {
+  leftSlide(
+    trainerSectionItems,
+    document.querySelector(".trainer-section .item.active")
+  );
+};
+trainerRightArr.onclick = () => {
+  rightSlide(
+    trainerSectionItems,
+    document.querySelector(".trainer-section .item.active")
+  );
+};
 //trainer section end//
