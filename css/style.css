@@ -54,7 +54,7 @@ body {
 }
 
 /* reusable styles start*/
-.more-btn {
+.btn {
   width: 220px;
   height: 70px;
   font-size: 1rem;
@@ -66,9 +66,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 2s;
+  transition: background-color 1s;
 }
-.more-btn:hover {
+.btn:hover {
   background-color: var(--secondary-color);
 }
 
@@ -273,7 +273,7 @@ body {
   height: 80%;
   /* object-fit: contain; */
 }
-.hero-section .slideshow .items .item .more-btn {
+.hero-section .slideshow .items .item .btn {
   margin-top: 92px;
 }
 
@@ -306,7 +306,7 @@ body {
   line-height: 1.5;
 }
 
-.sports-section .info .more-btn {
+.sports-section .info .btn {
   display: inline-flex;
   margin-top: 30px;
 }
@@ -357,7 +357,7 @@ body {
 .sports-section .activities .activity .text {
   width: 250px;
 }
-.sports-section .activities .activity .more-btn {
+.sports-section .activities .activity .btn {
   width: 150px;
   height: 50px;
   font-size: 0.8rem;
@@ -515,3 +515,24 @@ body {
   transform: translateX(300%);
 }
 /* trainer section end */
+
+/* contact section start */
+.contact-section .info {
+  text-align: center;
+  margin: 70px 0;
+}
+.contact-section .info .text {
+  width: 800px;
+  margin: 0 auto;
+}
+.contact-section .btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 50px;
+}
+.contact-section .btns .btn {
+  flex-basis: 30%;
+}
+/* contact section end */
