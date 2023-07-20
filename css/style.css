@@ -54,6 +54,8 @@ body {
   background-color: whitesmoke;
   background-image: url("../imgs/background.jpg");
   background-size: cover;
+  scroll-behavior: smooth;
+  transition: all 1s;
 }
 
 /* reusable styles start*/
@@ -134,6 +136,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 40px 30px 0px 12px;
+  user-select: none;
 }
 
 .header .logo {
@@ -380,6 +383,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 25px;
+  user-select: none;
 }
 
 .sports-section .activities .activity {
