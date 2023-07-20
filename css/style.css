@@ -52,6 +52,8 @@ a {
 
 body {
   background-color: whitesmoke;
+  background-image: url("../imgs/background.jpg");
+  background-size: cover;
 }
 
 /* reusable styles start*/
