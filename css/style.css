@@ -122,6 +122,8 @@ body {
   transform: translateY(-5px);
 }
 
+.clicks-unallowed {
+}
 /* reusable styles end*/
 
 /* header start */

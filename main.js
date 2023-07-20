@@ -37,10 +37,6 @@ function addSideItemAtDirection(directon, allItems, activeItem) {
     newItemToAdd.classList.add("right");
     newItemToAdd.style.visibility = "visible";
   }
-  // activeItem.parentElement.insertBefore(
-  //   newItemToAdd,
-  //   activeItem.parentElement.lastElementChild //.right-arr element
-  // );
   activeItem.parentElement.appendChild(newItemToAdd);
 
   return newItemToAdd;
@@ -62,8 +58,12 @@ function makeSideItemActive(sideItem, direction) {
 }
 
 async function leftSlide(allItems, activeItem) {
-  if (!isItemSliding) {
-    preventClick();
+  if (
+    !activeItem.parentElement.parentElement.classList.contains(
+      "clicks-unallowed"
+    )
+  ) {
+    preventQuickClicks(activeItem);
     let addedItem = addSideItemAtDirection("left", allItems, activeItem);
     moveActiveItemToDirection(activeItem, "right");
     // give time for the browser to register the property change
@@ -78,8 +78,12 @@ async function leftSlide(allItems, activeItem) {
 }
 
 async function rightSlide(allItems, activeItem) {
-  if (!isItemSliding) {
-    preventClick();
+  if (
+    !activeItem.parentElement.parentElement.classList.contains(
+      "clicks-unallowed"
+    )
+  ) {
+    preventQuickClicks(activeItem);
     let addedItem = addSideItemAtDirection("right", allItems, activeItem);
     moveActiveItemToDirection(activeItem, "left");
     // give time for the browser to register the property change
@@ -94,15 +98,21 @@ async function rightSlide(allItems, activeItem) {
   }
 }
 
-let isItemSliding = false;
-async function preventClick() {
-  isItemSliding = true;
+async function preventQuickClicks(activeItem) {
+  const ancestor = activeItem.parentElement.parentElement;
+  ancestor.classList.add("clicks-unallowed");
   await new Promise((resolve) => {
     setTimeout(() => {
       resolve();
     }, 800);
   });
-  isItemSliding = false;
+  ancestor.classList.remove("clicks-unallowed");
+}
+
+function startAutomaticSliding(slideshow) {
+  setInterval(() => {
+    slideshow.querySelector(".right-arr").click();
+  }, 5000);
 }
 //slidshow code start end//
 
@@ -152,6 +162,7 @@ heroRightArr.onclick = () => {
   );
 };
 
+startAutomaticSliding(heroSlideshow);
 //Slideshow code end//
 
 // about section start//
@@ -179,6 +190,7 @@ playBtn.onclick = () => {
 //about section end//
 
 //trainer section start//
+const trainerSlideshow = document.querySelector(".trainer-section .slideshow");
 const trainerLeftArr = document.querySelector(".trainer-section .left-arr");
 const trainerRightArr = document.querySelector(".trainer-section .right-arr");
 const trainerItem1 = document.querySelector(".trainer-section .item");
@@ -204,4 +216,6 @@ trainerRightArr.onclick = () => {
     document.querySelector(".trainer-section .item.active")
   );
 };
+
+startAutomaticSliding(trainerSlideshow);
 //trainer section end//
